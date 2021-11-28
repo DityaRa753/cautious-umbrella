@@ -1,0 +1,15 @@
+CFLAGS = -g -Wall -c -m32 -pedantic -ansi
+LDFLAGS = -m elf_i386
+ASM = nasm
+ASMFLAGS = -f elf
+
+start.o: start.asm
+	$(ASM) $(ASMFLAGS) $<
+calls.o: calls.asm
+	$(ASM) $(ASMFLAGS) $<
+str_len.o: str_len.c
+	$(CC) $(CFLAGS) $< -o $@
+test.o: test.c str_len.o str_len.h
+	$(CC) $(CFLAGS) $<
+fin3: start.o calls.o str_len.o test.o
+	$(LD) $(LDFLAGS) $^ -o $@ 

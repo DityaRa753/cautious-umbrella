@@ -1,0 +1,10 @@
+str_len.o: str_len.c str_len.h
+	gcc -m32 -c str_len.c -o str_len.o
+start.o: start.asm
+	nasm -f elf start.asm
+calls.o: calls.asm
+	nasm -f elf calls.asm
+test.o: test.c str_len.o
+	gcc -m32 -c test.c -o test.o
+fin: start.o calls.o str_len.o test.o
+	ld -m elf_i386 start.o calls.o str_len.o test.o -o test

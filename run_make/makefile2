@@ -1,0 +1,17 @@
+CC = gcc
+CFLAGS = -g -Wall -ansi -pedantic -m32 -c
+ASM = nasm
+ASMFLAGS = -f elf
+LD = ld
+LDFLAGS = -m elf_i386
+
+start.o: start.asm
+	$(ASM) $(ASMFLAGS) start.asm
+calls.o: calls.asm
+	$(ASM) $(ASMFLAGS) calls.asm
+str_len.o: str_len.c str_len.h
+	$(CC) $(CFLAGS) str_len.c
+test.o: start.o calls.o str_len.o test.c
+	$(CC) $(CFLAGS) test.c
+fin2: start.o calls.o str_len.o test.o
+	$(LD) $(LDFLAGS) start.o calls.o str_len.o test.o -o test
