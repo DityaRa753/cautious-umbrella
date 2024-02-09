@@ -1,0 +1,2 @@
+This example usage c without standard library. Instead of this, assembler code
+is used.
