@@ -1,7 +1,7 @@
 global _start
 extern main
 section     .text
-_start:     mov ecx, [esp]  ; argc in ecs
+_start:     mov ecx, [esp]  ; argc in ecx
             mov eax, esp
             add eax, 4      ; argv in eax
             push eax

@@ -20,7 +20,6 @@ int main()
         *(s2+i) = '9';
         printf("%c", *(s2+i));
     }
-    /*printf("\n%c\n", *(s+10));*/
     printf("\nCopy Up string\n");
     
     string_copy(s2, s);
@@ -29,5 +28,4 @@ int main()
         printf("%c", *(s2+i));
     }
     printf("\n");
-    /* printf("%c\n", s2[l]); */
 }

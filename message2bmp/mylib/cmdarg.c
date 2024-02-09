@@ -1,32 +1,9 @@
 #include <stdio.h>
 #include "string_compare.c"
 #include "size_file.c"
-// argv -> *array -> **elem
-// for (int i = 0; i < argc; i++) {
-//     printf("[%d]\n", argv+i);
-// }
-// I'm don't know how right transfer* strings...
-/*
-code 1 - no arguments;
-code 2 - calling help;
-code 3 - ...
-*/
+
 char* STR_ERR = "use --help or -h or -? for help.\n"; // shouldn't change.
 
-// int bitcoding(char** argv) 
-// {
-//     if (!argv) {
-//         printf("Missing arument -e [DIGIT]\n\t%s\n", STR_ERR);
-//         return 1;
-//     } else {
-//         if (!strcmp1(argv, "1") || !strcmp1(argv, "2") || !strcmp1(argv, "4") || !strcmp1(argv, "8"))
-//             return 0;
-//         else {
-//             printf("There is no such degree or string's has been input!\n\t%s\n", STR_ERR);
-//             return 1;
-//         }
-//     }
-// }
 // possigle bug when entered message not in quotes! **********************
 int cmdarg(int argc, char** argv, int* file_txt, int* ibmp, int* obmp) {
     if (argc <= 1) {
@@ -34,7 +11,7 @@ int cmdarg(int argc, char** argv, int* file_txt, int* ibmp, int* obmp) {
         return -1;
     }
     // checking first element
-    if (!strcmp1(argv[1], "--help") || !strcmp1(argv[1], "-h") || !strcmp1(argv[1], "-?") || !strcmp1(argv[1]), "/?") {
+    if (!strcmp1(argv[1], "--help") || !strcmp1(argv[1], "-h") || !strcmp1(argv[1], "-?") || !strcmp1(argv[1], "/?")) {
         printf("This is manual. There are available commands:\n"); //TODO: fill help command
         printf(" -e or --encode\t\tWrite message to .bmp.file\n");
         printf(" -d or --decode\t\tReads an encoded message from a .bmp\n");
@@ -87,16 +64,6 @@ int cmdarg(int argc, char** argv, int* file_txt, int* ibmp, int* obmp) {
                     }
                     else
                         m_or_M = 1;
-                    // for a non-working version with FILE* -> fopen()
-                    // else {
-                    //     int c = getc(*file_txt) != EOF; // checking a file for directory or file
-                    //     if (!c) {
-                    //         printf("Is a directory. Specify path to file with text.\n");
-                    //         fclose(*file_txt);
-                    //         return -1;
-                    //     }
-                    // }
-                    // I know that this is a file.
                 }
             }
             else {
@@ -138,16 +105,6 @@ int cmdarg(int argc, char** argv, int* file_txt, int* ibmp, int* obmp) {
                             return -1;
                         }
                     }
-                    // for a non-working version with FILE* -> fopen()
-                    // else {
-                    //     int c = getc(*ibmp) != EOF;
-                    //     if (!c) {
-                    //         printf("Is a directory. Specify path to file with text.\n");
-                    //         fclose(*ibmp);
-                    //         return -1;
-                    //     }
-                    //     // I know the file exists
-                    // }
                 }
             }
             else {

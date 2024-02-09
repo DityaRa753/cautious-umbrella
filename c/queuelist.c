@@ -57,7 +57,6 @@ struct item *listqueue(int len, int *arr)
 
 void print_list(struct item *first)
 {
-    /* I decied to print addresses */
     struct item *tmp = first;
     char i = 1;
     while(tmp) {
@@ -80,7 +79,6 @@ int main(argc, argv)
         return 3;
     }
     int len = strtoint(argv[1]);
-    /*printf("len->%d", len);*/
     int array[len];
     fill_arr(len, array);
     struct item *first_item = NULL;

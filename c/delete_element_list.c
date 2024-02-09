@@ -46,7 +46,6 @@ int main()
     int arr[] = {1, 2, -55, -2, 77, -10, 7, -1, 9, -19};
     struct item *list = createList(arr, len);
     printElem(len, list);
-    // printf("%d\n", list->data);
     deleteList(&list);
     printf("\n");
     printElem(len, list);

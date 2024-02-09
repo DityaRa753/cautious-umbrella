@@ -1,6 +1,5 @@
 #include<stdio.h>
 
-
 struct node {
   int val;
   struct node *left, *right;

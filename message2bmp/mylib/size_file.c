@@ -4,7 +4,7 @@
 int filesize(int descriptor)
 {
     int buff[1000];
-    return read(descriptor, buff, sizeof buff);
+    return read(descriptor, buff, sizeof(buff));
 }
 
 int availableSize(char encbit, int lenstr, int file_des_txt, int frombmp)

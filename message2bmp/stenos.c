@@ -1,10 +1,10 @@
 /* console application:
-1) Step asking user what we are dooing?
+1) Step asking user what we are doing?
 this wirte data(text) or read data(text), this question's output in console.
 :upd I used command line aruments
 Checking input strings
-2) Open fucking desctiptor's!!
-There are many ways to check file sizem for a good register for win and linux two variable.
+2) Open desctiptor's
+There are many ways to check file size for a good register for win and linux two variable.
 Or reinvent the wheel, but need to think, and it will work more slowly, but everywhere.
 1 to 1 ; 8 -> 8; 1000b -> 1000file ;
 1 to 2 ; 4 -> 8; 1000b -> 2000file ;
@@ -42,16 +42,6 @@ int encoding(char* buffer, int file_txt, int ibmp, int obmp) {
             return -1;
         }
         printf("write bytes -> %d\n", wrt_byte_fifty_four);
-        // printf("read bytes -> %u\n", read_byte);
-        // for (int i = 0; i < sysbmp; i++)
-        //     printf("%c -> %d(%x)  %d\n", buffer[i], buffer[i], buffer[i], i);
-        // printf("\n");
-    }
-    if (!file_txt) {
-
-    }
-    else {
-        // working with file descriptor.
     }
     return 0;
 }
@@ -70,7 +60,7 @@ int main(int argc, char** argv) {
         return 0;
     }
     else {
-        printf("Oh... fuck error...\n");
+        printf("Unrecognized action.\n");
         return -1;
     }
 }

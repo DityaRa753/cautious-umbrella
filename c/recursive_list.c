@@ -90,7 +90,6 @@ int main() {
     printarr(len, arr+1);
     first = rec_arr_to_list(len, arr+1);
     printlist(first);
-    // printf("%ld\n", first);
     printf("Sum all elements: %d\n", int_list_sum(first));
     return 0;
 }
